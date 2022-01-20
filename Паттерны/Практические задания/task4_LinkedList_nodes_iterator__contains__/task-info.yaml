@@ -28,7 +28,7 @@ files:
                   yield current_node
                   current_node = current_node.next
   - offset: 2464
-    length: 29
+    length: 37
     placeholder_text: '# TODO определить метод __contains__'
     initial_state:
       length: 36
@@ -171,5 +171,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Mon, 17 Jan 2022 12:23:22 UTC
+  time: Thu, 20 Jan 2022 17:32:45 UTC
 record: -1

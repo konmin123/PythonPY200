@@ -1,5 +1,8 @@
 type: theory
 files:
+- name: __init__.py
+  visible: false
+  learner_created: false
 - name: task.py
   visible: true
   placeholders:
@@ -50,11 +53,8 @@ files:
 
     # TODO реализовать класс DoubleLinkedNode
   learner_created: false
-- name: __init__.py
-  visible: false
-  learner_created: false
 status: Solved
 feedback:
-  time: Sun, 16 Jan 2022 14:51:34 UTC
+  time: Thu, 20 Jan 2022 17:36:26 UTC
 record: -1
 post_submission_on_open: true

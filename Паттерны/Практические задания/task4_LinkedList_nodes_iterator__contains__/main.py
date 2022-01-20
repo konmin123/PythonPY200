@@ -78,7 +78,7 @@ class LinkedList:
             current_node = current_node.next
 
 
-    def __contains__(self, item):
+    def __contains__(self, item) -> bool:
         print("Вызван метод \"__contains__\"")
         return any(node.value == item for node in self.nodes_iterator())
 

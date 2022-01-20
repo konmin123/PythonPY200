@@ -9,7 +9,7 @@ files:
   visible: true
   placeholders:
   - offset: 701
-    length: 57
+    length: 404
     placeholder_text: '...  # TODO реализовать драйвер работы с текстовым файлом'
     initial_state:
       length: 57
@@ -20,27 +20,27 @@ files:
     encrypted_possible_answer: |-
       def __init__(self, filename):
               self.filename = filename
-  - offset: 764
-    length: 47
+  - offset: 1106
+    length: 0
     placeholder_text: '# TODO реализовать метод чтения данных из файла'
     initial_state:
       length: 47
       offset: 764
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Failed
     encrypted_possible_answer: |-
       def read(self) -> Iterable:
               with open(self.filename) as f:
                   return [int(line) for line in f]
-  - offset: 817
-    length: 48
+  - offset: 1107
+    length: 0
     placeholder_text: '# TODO реализовать метод записи в файл построчно'
     initial_state:
       length: 48
       offset: 817
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Failed
     encrypted_possible_answer: |-
       def write(self, data: Iterable) -> None:
@@ -95,11 +95,15 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
+- name: output.txt
+  visible: true
+  learner_created: true
 status: Failed
 feedback:
   message: Incorrect
-  time: Thu, 20 Jan 2022 08:10:35 UTC
+  time: Thu, 20 Jan 2022 16:10:34 UTC
   expected: |
     [1, 2, 3]
-  actual: <no output>
+  actual: |
+    ['1', '2', '3']
 record: -1

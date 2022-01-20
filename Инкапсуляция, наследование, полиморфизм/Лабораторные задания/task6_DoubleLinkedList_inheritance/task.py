@@ -72,29 +72,18 @@ class LinkedList:
 
 
 class DoubleLinkedList(LinkedList):
-    def __init__(self, data: Iterable = None):
-        """Конструктор двусвязного списка"""
-        self.len = 0
-        self.head: Optional[Dln] = None
-        self.tail = self.head
 
-        if data is not None:
-            for value in data:
-                self.append(value)
+    def append(self, value: Any):
+        """ Добавление элемента в конец связного списка. """
+        append_node = Dln(value)
 
-    def step_by_step_on_dln(self, index: int) -> Dln:
-        """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
-        if not isinstance(index, int):
-            raise TypeError()
+        if self.head is None:
+            self.head = self.tail = append_node
+        else:
+            self.linked_nodes(self.tail, append_node)
+            self.tail = append_node
 
-        if not 0 <= index < self.len:  # для for
-            raise IndexError()
-
-        current_dln = self.head
-        for _ in range(index):
-            current_dln = current_dln.next
-
-        return current_dln
+        self.len += 1
 
     @staticmethod
     def linked_nodes(left_dln: Dln, right_dln: Optional[Dln] = None) -> None:
@@ -116,3 +105,5 @@ print(dls1.__getitem__(2))
 print(dls1.tail)
 print(dls1.head)
 print(type(dls1))
+
+assert isinstance(dls1.head, Dln)
