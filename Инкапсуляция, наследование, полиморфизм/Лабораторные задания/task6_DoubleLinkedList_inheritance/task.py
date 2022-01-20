@@ -1,6 +1,7 @@
 from typing import Any, Iterable, Optional
 
 from node import Node
+from node import Dln
 
 
 class LinkedList:
@@ -70,4 +71,48 @@ class LinkedList:
         return f"{self.to_list()}"
 
 
-# TODO Реализовать класс DoubleLinkedList
+class DoubleLinkedList(LinkedList):
+    def __init__(self, data: Iterable = None):
+        """Конструктор двусвязного списка"""
+        self.len = 0
+        self.head: Optional[Dln] = None
+        self.tail = self.head
+
+        if data is not None:
+            for value in data:
+                self.append(value)
+
+    def step_by_step_on_dln(self, index: int) -> Dln:
+        """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
+        if not isinstance(index, int):
+            raise TypeError()
+
+        if not 0 <= index < self.len:  # для for
+            raise IndexError()
+
+        current_dln = self.head
+        for _ in range(index):
+            current_dln = current_dln.next
+
+        return current_dln
+
+    @staticmethod
+    def linked_nodes(left_dln: Dln, right_dln: Optional[Dln] = None) -> None:
+        """
+        Функция, которая связывает между собой два узла.
+
+        :param left_dln: Левый или предыдущий узел
+        :param right_dln: Правый или следующий узел
+        """
+        left_dln.next = right_dln
+        right_dln.prev = left_dln
+
+
+dls1 = DoubleLinkedList([1, 2, 3, 4, 5])
+print(repr(dls1))
+dls1.append(6)
+print(dls1)
+print(dls1.__getitem__(2))
+print(dls1.tail)
+print(dls1.head)
+print(type(dls1))

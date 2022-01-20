@@ -69,14 +69,27 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
+    # def __add__(self, other: "LinkedList") -> "LinkedList":
+    #     if not isinstance(other, Iterable):
+    #         raise TypeError()
+    #     for value in other:
+    #         self.append(value)
+
     def __add__(self, other: "LinkedList") -> "LinkedList":
-        ...  # TODO реализовать конкатенацию последовательностей
+        if not isinstance(other, LinkedList):
+            raise TypeError
+        for item in other:
+            self.append(item)
+        return self
 
 
 if __name__ == "__main__":
     list_ = [1, 2, 3]
     ll = LinkedList(list_)
+    ll2 = [4, 5, 6]
     print(ll)
 
+    # ll.__add__(ll2)
+    # print(ll)
     ll = ll + LinkedList([4, 5, 6])
     print(ll)

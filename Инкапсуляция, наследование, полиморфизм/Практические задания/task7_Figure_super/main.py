@@ -8,7 +8,7 @@ class Figure:
 
 class Rectangle(Figure):
     def __init__(self, a, b, name=None):
-        # TODO вызвать конструктор базового класса
+        self.name = name
         self.a = a
         self.b = b
 

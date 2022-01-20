@@ -69,17 +69,19 @@ class LinkedList:
     def __str__(self) -> str:
         return f"{self.to_list()}"
 
-    def __add__(self, other: "LinkedList") -> "LinkedList":  # TODO метод должен уметь складывать list
+    def __add__(self, other: ["LinkedList", list]) -> "LinkedList":
         if not isinstance(other, LinkedList):
-            raise TypeError
-
+            raise TypeError()
         for item in other:
             self.append(item)
-
         return self
 
     def __iadd__(self, other: ["LinkedList", list]):
-        ... # TODO определить метод для оператора +=
+        if not isinstance(other, (list, LinkedList)):
+            raise TypeError()
+        for item in other:
+            self.append(item)
+        return self
 
 
 if __name__ == "__main__":

@@ -15,8 +15,8 @@ files:
       length: 57
       offset: 701
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |-
       def __init__(self, filename):
               self.filename = filename
@@ -28,7 +28,7 @@ files:
       offset: 764
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       def read(self) -> Iterable:
               with open(self.filename) as f:
@@ -41,7 +41,7 @@ files:
       offset: 817
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: |-
       def write(self, data: Iterable) -> None:
               with open(self.filename, "w") as f:
@@ -95,5 +95,11 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: Incorrect
+  time: Thu, 20 Jan 2022 08:10:35 UTC
+  expected: |
+    [1, 2, 3]
+  actual: <no output>
 record: -1
