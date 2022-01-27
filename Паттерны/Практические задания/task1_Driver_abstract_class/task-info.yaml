@@ -9,39 +9,39 @@ files:
   visible: true
   placeholders:
   - offset: 701
-    length: 404
+    length: 57
     placeholder_text: '...  # TODO реализовать драйвер работы с текстовым файлом'
     initial_state:
       length: 57
       offset: 701
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       def __init__(self, filename):
               self.filename = filename
-  - offset: 1106
-    length: 0
+  - offset: 764
+    length: 55
     placeholder_text: '# TODO реализовать метод чтения данных из файла'
     initial_state:
       length: 47
       offset: 764
     initialized_from_dependency: false
-    selected: true
-    status: Failed
+    selected: false
+    status: Solved
     encrypted_possible_answer: |-
       def read(self) -> Iterable:
               with open(self.filename) as f:
                   return [int(line) for line in f]
-  - offset: 1107
-    length: 0
+  - offset: 810
+    length: 51
     placeholder_text: '# TODO реализовать метод записи в файл построчно'
     initial_state:
       length: 48
       offset: 817
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       def write(self, data: Iterable) -> None:
               with open(self.filename, "w") as f:
@@ -98,12 +98,8 @@ files:
 - name: output.txt
   visible: true
   learner_created: true
-status: Failed
+status: Solved
 feedback:
-  message: Incorrect
-  time: Thu, 20 Jan 2022 16:10:34 UTC
-  expected: |
-    [1, 2, 3]
-  actual: |
-    ['1', '2', '3']
+  message: Congratulations!
+  time: Mon, 24 Jan 2022 07:59:46 UTC
 record: -1

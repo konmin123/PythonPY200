@@ -13,8 +13,8 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 2356
-    length: 25
+  - offset: 2369
+    length: 26
     placeholder_text: '...  # TODO функция-генератор для перебора всех узлов'
     initial_state:
       length: 53
@@ -27,7 +27,7 @@ files:
               for _ in range(self.len):
                   yield current_node
                   current_node = current_node.next
-  - offset: 2464
+  - offset: 2478
     length: 37
     placeholder_text: '# TODO определить метод __contains__'
     initial_state:
@@ -171,5 +171,5 @@ files:
 status: Solved
 feedback:
   message: Congratulations!
-  time: Thu, 20 Jan 2022 17:32:45 UTC
+  time: Sun, 23 Jan 2022 17:41:53 UTC
 record: -1

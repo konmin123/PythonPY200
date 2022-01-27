@@ -40,7 +40,7 @@ files:
       length: 45
       offset: 827
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: SimpleFileFactoryMethod.get_driver()
   - offset: 918
@@ -50,7 +50,7 @@ files:
       length: 43
       offset: 918
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: JsonFileDriverFactoryMethod.get_driver()
   text: |

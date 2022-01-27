@@ -1,16 +1,19 @@
 type: theory
 files:
+- name: __init__.py
+  visible: false
+  learner_created: false
 - name: main.py
   visible: true
   placeholders:
   - offset: 0
-    length: 49
+    length: 391
     placeholder_text: '# TODO Реализовать LinkedList как MutableSequence'
     initial_state:
       length: 49
       offset: 0
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Solved
     encrypted_possible_answer: |-
       from collections.abc import MutableSequence
@@ -39,9 +42,8 @@ files:
     if __name__ == "__main__":
         ...
   learner_created: false
-- name: __init__.py
-  visible: false
-  learner_created: false
 status: Solved
+feedback:
+  time: Mon, 24 Jan 2022 08:20:34 UTC
 record: -1
 post_submission_on_open: true

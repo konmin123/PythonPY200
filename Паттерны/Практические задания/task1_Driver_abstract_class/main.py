@@ -25,7 +25,7 @@ class IStructureDriver(ABC):
 class SimpleFileDriver(IStructureDriver):
     def read(self) -> Iterable:
         with open(self.filename, "r", encoding="utf8") as f:
-            return [line.rstrip() for line in f]
+            return [int(line) for line in f]
         pass
 
     def write(self, data: Iterable) -> None:
