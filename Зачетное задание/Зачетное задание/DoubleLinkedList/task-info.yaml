@@ -36,8 +36,11 @@ files:
   text: |
     ...
   learner_created: false
+- name: test_task.py
+  visible: true
+  learner_created: true
 status: Solved
 feedback:
   message: Congratulations!
-  time: Wed, 26 Jan 2022 09:13:38 UTC
+  time: Thu, 27 Jan 2022 17:56:00 UTC
 record: -1

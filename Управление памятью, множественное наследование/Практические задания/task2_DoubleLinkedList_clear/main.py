@@ -12,7 +12,7 @@ class DoubleLinkedNode(Node):
 
     @property
     def prev(self):
-        return self._prev()  # TODO объект теперь вызываемый
+        return None if self._prev is None else self._prev()  # TODO объект теперь вызываемый
 
     @prev.setter
     def prev(self, prev: Optional["Node"]):

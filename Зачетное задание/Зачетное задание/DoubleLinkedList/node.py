@@ -19,8 +19,9 @@ class Node:
     def __str__(self) -> str:
         return str(self.value)
 
-    def is_valid(self, node: Any) -> None:
-        if not isinstance(node, (type(None), Node)):
+    @classmethod
+    def is_valid(cls, node: Any) -> None:
+        if not isinstance(node, (type(None), cls)):
             raise TypeError
 
 
@@ -29,10 +30,6 @@ class Dln(Node):
     def __init__(self, value: Any, prev: Optional["Dln"] = None, next_: Optional["Dln"] = None):
         super().__init__(value, next_)
         self._prev = prev
-
-    def is_valid(self, dln: Any):
-        if not isinstance(dln, (type(None), Dln)):
-            raise TypeError()
 
     def __repr__(self) -> str:
         next_ = None if self.next is None else f"Dln({repr(self.next.value)})"
