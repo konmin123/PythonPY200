@@ -1,4 +1,4 @@
-from typing import Any, Iterable, Optional, Iterator
+from typing import Any, Iterable, Optional, Iterator, overload
 from collections.abc import MutableSequence
 
 from node import Node
@@ -65,25 +65,21 @@ class LinkedList(MutableSequence):
 
     def insert(self, index: int, value) -> None:
         """ Метод вставляет новую ноду с заданным значением по указанному индексу. """
+
         insert_node = self.CLASS_NODE(value)
 
-        if self._head is None:
-            self.append(insert_node)
-
-        elif index == 0:
+        if index == 0:
             insert_node.next = self._head
             self._head = insert_node
-
-        elif index == self._len - 1:
-            self._tail.next = insert_node
-            self._tail = insert_node
-
+            self._len += 1
+        elif index >= self._len - 1:
+            self.append(value)
         else:
             left_node = LinkedList.step_by_step_on_nodes(self, index - 1)
             right_node = LinkedList.step_by_step_on_nodes(self, index)
             self.linked_nodes(left_node, insert_node)
             self.linked_nodes(insert_node, right_node)
-        self._len += 1
+            self._len += 1
 
     def append(self, value: Any):
         """ Добавление элемента в конец связного списка. """
@@ -152,5 +148,22 @@ class DoubleLinkedList(LinkedList):
         right_node.prev = left_node
 
 
+class LinkedListRemove(LinkedList):
+    def remove(self, value: Any):
+        for index in range(self._len):
+            if self[index] == value:
+                del self[index]
+                break
+        else:
+            raise ValueError
+
+
+
+
 if __name__ == "__main__":
-    pass
+    ll = LinkedListRemove([1, 2, 3, 4, 5, 'd'])
+    ll.remove(1000)
+    print(ll)
+
+
+

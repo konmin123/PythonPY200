@@ -102,3 +102,11 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual('[1, 2, 3, 100]', str(ll))
         self.assertEqual(4, ll._len)
         self.assertEqual(100, ll._tail.value)
+
+    def test_insert_in_empty_list(self):
+        ll = LinkedList([])
+        ll.insert(100, 25)
+
+        self.assertEqual(1, len(ll))
+        self.assertEqual(25, ll._head.value)
+        self.assertEqual(25, ll._tail.value)
